@@ -1,29 +1,34 @@
-function Item({ name, importance }) {
+function Drink({ name }) {
+  let part, caffeine, age;
+  if (name === 'tea') {
+    part = 'leaf';
+    caffeine = '15–70 mg/cup';
+    age = '4,000+ years';
+  } else if (name === 'coffee') {
+    part = 'bean';
+    caffeine = '80–185 mg/cup';
+    age = '1,000+ years';
+  }
   return (
-    <li className="item">
-      {name} {importance > 0 && <i>(importance: {importance})</i>}
-    </li>
+    <section>
+      <h1>{name}</h1>
+      <dl>
+        <dt>Part of plant</dt>
+        <dd>{part}</dd>
+        <dt>Caffeine content</dt>
+        <dd>{caffeine}</dd>
+        <dt>Age</dt>
+        <dd>{age}</dd>
+      </dl>
+    </section>
   );
 }
 
-export default function PackingList() {
+export default function DrinkList() {
   return (
-    <section>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item 
-          importance={9} 
-          name="Space suit" 
-        />
-        <Item 
-          importance={0} 
-          name="Helmet with a golden leaf" 
-        />
-        <Item 
-          importance={6} 
-          name="Photo of Tam" 
-        />
-      </ul>
-    </section>
+    <div>
+      <Drink name="tea" />
+      <Drink name="coffee" />
+    </div>
   );
 }
