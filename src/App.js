@@ -1,21 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
-function Profile() {
-  return (
-    <img
-      src="https://i.imgur.com/lICfvbD.jpg"
-      alt="Aklilu Lemma"
-    />
-  );
-}
-
-function App() {
+export default function Profile() {
   return (
     <div>
-      <Profile/>
+      <img src="https://i.imgur.com/jA8hHMpm.jpg" alt="Katsuko Saruhashi" />;
     </div>
-  );
+  )
 }
-
-export default App;
