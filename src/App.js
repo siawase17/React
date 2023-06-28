@@ -1,8 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import Gallery from './Gallery.js';
+import { Profile } from './Profile.js';
 
-export default function Profile() {
+export default function App() {
   return (
-    <h1>Good job Yujin!</h1>
+    <div>
+      <Gallery />
+      <Profile />
+    </div>
   );
 }
