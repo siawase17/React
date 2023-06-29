@@ -1,22 +1,14 @@
-import React, { Fragment } from 'react' ;
-
-const poem = {
-  lines: [
-    'I write, erase, rewrite',
-    'Erase again, and then',
-    'A poppy blooms.'
-  ]
-};
-
-export default function Poem() {
+export default function Clock({ time }) {
+  let hours = time.getHours();
+  let className;
+  if (hours >= 0 && hours <= 6) {
+    className = 'night';
+  } else {
+    className = 'day';
+  }
   return (
-    <article>
-      {poem.lines.map((line, i) =>
-        <Fragment key={i}>
-          {i > 0 && <hr />}
-          <p>{line}</p>
-        </Fragment>
-      )}
-    </article>
-  )
+    <h1 className={className}>
+      {time.toLocaleTimeString()}
+    </h1>
+  );
 }
