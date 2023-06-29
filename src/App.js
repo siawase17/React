@@ -1,16 +1,12 @@
-import Profile from './Profile.js';
-
-export default function App() {
+export default function StoryTray({ stories }) {
   return (
-    <>
-      <Profile person={{
-        imageId: 'lrWQx8l',
-        name: 'Subrahmanyan Chandrasekhar',
-      }} />
-      <Profile person={{
-        imageId: 'MK3eW3A',
-        name: 'Creola Katherine Johnson',
-      }} />
-    </>
-  )
+    <ul>
+      {stories.map(story => (
+        <li key={story.id}>
+          {story.label}
+        </li>
+      ))}
+      <li>Create Story</li>
+    </ul>
+  );
 }
